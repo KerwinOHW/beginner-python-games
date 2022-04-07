@@ -1,6 +1,6 @@
 import time
 
-from player import HumanPlayer, RandomComputerPlayer
+from player import HumanPlayer, RandomComputerPlayer, GeniusComputerPlayer
 
 
 class TicTacToe:
@@ -108,15 +108,35 @@ def play(game, x_player, o_player, print_game=True):
             letter = 'O' if letter == 'X' else 'X'  # switches player
 
         # tiny break to make things a little easier to read
-        time.sleep(0.8)
+        if print_game:
+            time.sleep(0.8)
 
 
     if print_game:  # 此时循环结束，说明已无空格
         print('It\'s a tie!')
 
 
+# if __name__ == '__main__':
+#     x_wins = 0
+#     o_wins = 0
+#     ties = 0
+#     m = int(input("Enter how many times you want: "))
+#     for _ in range(m):
+#         x_player = RandomComputerPlayer('X')
+#         o_player = GeniusComputerPlayer('O')
+#         t = TicTacToe()
+#         result = play(t, x_player, o_player,print_game=False)  # 不打印九宫格
+#         if result == 'X':
+#             x_wins += 1
+#         elif result == 'O':
+#             o_wins += 1
+#         else:
+#             ties += 1
+#
+#     print(f'After {m} iterations, we see {x_wins} X wins, {o_wins} O wins and {ties} ties.')
+
 if __name__ == '__main__':
-    x_player = HumanPlayer('X')
-    o_player = RandomComputerPlayer('O')
+    o_player = RandomComputerPlayer('X')
+    x_player = GeniusComputerPlayer('O')
     t = TicTacToe()
-    play(t, x_player, o_player,print_game=True)
+    play(t, x_player, o_player, print_game=True)
