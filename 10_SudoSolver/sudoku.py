@@ -1,5 +1,5 @@
 def find_next_empty(puzzle):
-    # finds the next tow, col on the puzzle that's not filled yet --> rep with 0
+    # finds the next row, col on the puzzle that's not filled yet --> rep with 0
     # return row, col tuple (or (None, None) if there is none)
 
     # keep in mind that we are using 0-8 for our indices
